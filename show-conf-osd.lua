@@ -29,7 +29,8 @@ end
 
 function read_conf(config_file)
     local config_path -- Path of the configuration file
-    osd_lines = {} -- Reset the table
+    current_line = 1 -- Reset
+    osd_lines = {} -- Reset
 
     if package.config:sub(1,1) == '\\' or os.getenv('WINDIR') then
         config_path = os.getenv('APPDATA') .. '/mpv/' .. config_file
