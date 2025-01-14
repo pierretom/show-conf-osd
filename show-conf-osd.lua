@@ -1,9 +1,3 @@
--- Create a table to hold the lines of the OSD
-osd_lines = {}
-
--- Variable to keep track of the current position in the OSD
-current_line = 1
-
 -- Number of lines to display at once
 display_lines = 32
 
@@ -28,9 +22,14 @@ function truncate_line(str)
 end
 
 function read_conf(config_file)
-    local config_path -- Path of the configuration file
-    current_line = 1 -- Reset
-    osd_lines = {} -- Reset
+     -- Path of the configuration file
+    local config_path
+
+     -- Create or reset a table to hold the lines of the OSD
+    osd_lines = {}
+
+     -- Create or reset a variable to keep track of the current position in the OSD
+    current_line = 1
 
     if package.config:sub(1,1) == '\\' or os.getenv('WINDIR') then
         config_path = os.getenv('APPDATA') .. '/mpv/' .. config_file
