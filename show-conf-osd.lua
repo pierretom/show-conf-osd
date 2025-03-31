@@ -122,6 +122,38 @@ mp.add_key_binding("h", "show-fonts-conf", function()
     toggle_config_osd("fonts.conf")
 end)
 
+mp.add_key_binding("y", "show-channels-conf", function()
+    toggle_config_osd("channels.conf")
+end)
+
+mp.add_key_binding(nil, "show-video-avi-conf", function()
+    toggle_config_osd("video.avi.conf")
+end)
+
 mp.add_key_binding("k", "show-osc-conf", function()
     toggle_config_osd("script-opts/osc.conf")
+end)
+
+mp.add_key_binding("n", "show-console-conf", function()
+    toggle_config_osd("script-opts/console.conf")
+end)
+
+mp.add_key_binding(nil, "show-stats-conf", function()
+    toggle_config_osd("script-opts/stats.conf")
+end)
+
+mp.add_key_binding(nil, "show-commands-conf", function()
+    toggle_config_osd("script-opts/commands.conf")
+end)
+
+mp.add_key_binding(nil, "show-select-conf", function()
+    toggle_config_osd("script-opts/select.conf")
+end)
+
+mp.add_key_binding(nil, "show-positioning-conf", function()
+    toggle_config_osd("script-opts/positioning.conf")
+end)
+
+mp.add_key_binding(nil, "show-identifier-conf", function()
+    toggle_config_osd("script-opts/identifier.conf")
 end)

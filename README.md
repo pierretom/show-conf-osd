@@ -30,22 +30,38 @@ Press a key to switch to the display of a configuration file, press again to hid
 
 #### Default key bindings
 
-| Key   | Action |
-| ---   | --- |
-| a     | Display mpv.conf |
-| c     | Display input.conf |
-| h     | Display fonts.conf |
-| k     | Display osc.conf |
-| UP    | Scroll up |
-| DOWN  | Scroll down |
+| Key           | Action |
+| ---           | --- |
+| a             | Display mpv.conf |
+| c             | Display input.conf |
+| h             | Display fonts.conf |
+| y             | Display channels.conf |
+| Unassigned    | Display video.avi.conf |
+| k             | Display script-opts/osc.conf |
+| n             | Display script-opts/console.conf |
+| Unassigned    | Display script-opts/stats.conf |
+| Unassigned    | Display script-opts/commands.conf |
+| Unassigned    | Display script-opts/select.conf |
+| Unassigned    | Display script-opts/positioning.conf |
+| Unassigned    | Display script-opts/identifier.conf |
+| UP            | Scroll up |
+| DOWN          | Scroll down |
 
-You can reassign it in the script or in the `input.conf` file:
+You can assign or reassign it in the script or in the `input.conf` file:
 
 ```
 yourkey     script-binding show-mpv-conf
 yourkey     script-binding show-input-conf
 yourkey     script-binding show-fonts-conf
+yourkey     script-binding show-channels-conf
+yourkey     script-binding show-video-avi-conf
 yourkey     script-binding show-osc-conf
+yourkey     script-binding show-console-conf
+yourkey     script-binding show-stats-conf
+yourkey     script-binding show-commands-conf
+yourkey     script-binding show-select-conf
+yourkey     script-binding show-positioning-conf
+yourkey     script-binding show-identifier-conf
 ```
 
 ## Notes
