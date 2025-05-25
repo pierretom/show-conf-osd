@@ -1,10 +1,20 @@
+-- Global variables
+
 -- Number of lines to display at once
-display_lines = 32
+local display_lines = 32
 
 -- Flag to indicate if the OSD should be displayed
-osd_visible = false
+local osd_visible = false
 
-function truncate_line(str)
+-- Table to hold the lines of the OSD
+local osd_lines = {}
+
+-- Variable to keep track of the current position in the OSD
+local current_line = 1
+
+--
+
+local function truncate_line(str)
     local max_length = 100
     local current_length = 0
     local bytes = {string.byte(str, 1, -1)}
@@ -21,14 +31,14 @@ function truncate_line(str)
     return str
 end
 
-function read_conf(config_file)
-     -- Path of the configuration file
+local function read_conf(config_file)
+    -- Path of the configuration file
     local config_path
 
-     -- Create or reset a table to hold the lines of the OSD
+    -- Reset the lines of the OSD
     osd_lines = {}
 
-     -- Create or reset a variable to keep track of the current position in the OSD
+    -- Reset the current position in the OSD
     current_line = 1
 
     if package.config:sub(1,1) == '\\' or os.getenv('WINDIR') then
@@ -59,7 +69,7 @@ function read_conf(config_file)
 end
 
 -- Function to display the config file on the OSD
-function show_config_osd()
+local function show_config_osd()
     if #osd_lines == 0 then return end -- Nothing to display
 
     local osd_text = ""
@@ -82,7 +92,7 @@ function show_config_osd()
 end
 
 -- Function to scroll up
-function scroll_up()
+local function scroll_up()
     if current_line > 1 then
         current_line = current_line - 1
         show_config_osd()
@@ -90,7 +100,7 @@ function scroll_up()
 end
 
 -- Function to scroll down
-function scroll_down()
+local function scroll_down()
     if current_line + display_lines <= #osd_lines then
         current_line = current_line + 1
         show_config_osd()
@@ -98,7 +108,7 @@ function scroll_down()
 end
 
 -- Function to toggle OSD visibility
-function toggle_config_osd(config_file)
+local function toggle_config_osd(config_file)
     osd_visible = not osd_visible
 
     -- Forced keybindings to scroll

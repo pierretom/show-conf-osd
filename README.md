@@ -82,5 +82,5 @@ Examples:
 3. If you cannot see some lines on the OSD, you can ajust the number of lines to display at once in the script, e.g.:
 
 ```
-display_lines = 28
+local display_lines = 28
 ```
